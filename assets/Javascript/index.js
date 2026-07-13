@@ -81,7 +81,7 @@ function showCategory(category) {
                         onclick="changeQty(${product.id},1)">+</button>
                     </div>
                     <button class="btn add-btn"
-                        onclick="addToOrder(${product.id})">
+                        onclick="addToOrder(${product.id})" style="background-color:#7A1235;color:white;">
                         Add To Order
                     </button>
                 </div>
