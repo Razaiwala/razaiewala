@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/categories.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/shop-redesign.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/track_order.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Track Your Order | Jindal Razaie Udyog</title>
+</head>
+<body class="track-page">
+
+<div class="track-wrap">
+
+    <div class="track-card">
+        <div class="track-card-header">
+            <h1>Track Your Order</h1>
+            <p>Jindal Razaie Udyog</p>
+        </div>
+        <div class="track-card-body">
+            <p class="track-prompt">Enter your Order ID to check its status.</p>
+            <form id="trackForm" class="track-form" onsubmit="return handleTrackSubmit(event)">
+                <input type="text" id="orderIdInput" placeholder="e.g. JRU12345678" autocomplete="off">
+                <button type="submit" aria-label="Track order">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div id="trackResult" class="track-result"></div>
+
+</div>
+
+<script src="../Javascript/track_order.js"></script>
+</body>
+</html>

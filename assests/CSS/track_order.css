@@ -1,0 +1,207 @@
+:root{
+    --maroon:       #7A1235;
+    --maroon-deep:  #4A0A1F;
+    --to-gold:      #C8973D;
+    --to-ivory:     #FAF5EA;
+    --to-charcoal:  #2B2420;
+    --to-thread:    #D8C6A8;
+    --status-pending:   #B7791F;
+    --status-confirmed: #2B6CB0;
+    --status-dispatch:  #1E7A72;
+    --status-delivered: #1A7A3C;
+    --status-cancelled: #B3261E;
+    --status-default:   #6B7280;
+}
+
+.track-page{
+    min-height: 100vh;
+    background-color: var(--ground, #1c1611);
+    background-image:
+        repeating-linear-gradient(45deg,  rgba(200,151,62,.07) 0 1px, transparent 1px 36px),
+        repeating-linear-gradient(-45deg, rgba(200,151,62,.07) 0 1px, transparent 1px 36px),
+        radial-gradient(ellipse at 50% 0%, rgba(200,151,62,.14), transparent 55%);
+    background-size: 36px 36px, 36px 36px, 100% 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1.25rem;
+}
+
+.track-wrap{
+    width: 100%;
+    max-width: 480px;
+}
+
+/* ---------- Card ---------- */
+.track-card{
+    background: var(--to-ivory);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px -20px rgba(0,0,0,.55);
+}
+
+.track-card-header{
+    position: relative;
+    background: var(--maroon);
+    background-image: repeating-linear-gradient(
+        45deg, rgba(255,255,255,.06) 0 1px, transparent 1px 16px);
+    text-align: center;
+    padding: 2rem 1.5rem 1.6rem;
+}
+
+.track-card-header h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #fff;
+    margin: 0 0 .3rem;
+}
+
+.track-card-header p{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .78rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.75);
+    margin: 0;
+}
+
+.track-card-body{
+    padding: 1.8rem 1.6rem 2rem;
+    text-align: center;
+}
+
+.track-prompt{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .82rem;
+    color: var(--to-gold);
+    margin-bottom: 1.1rem;
+}
+
+.track-form{
+    display: flex;
+    gap: .6rem;
+}
+
+.track-form input{
+    flex: 1;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .95rem;
+    padding: .75rem 1rem;
+    border: 1.5px solid var(--to-charcoal);
+    border-radius: 10px;
+    background: #fff;
+    color: var(--to-charcoal);
+}
+
+.track-form input::placeholder{
+    color: #a89c88;
+}
+
+.track-form input:focus{
+    outline: none;
+    border-color: var(--maroon);
+    box-shadow: 0 0 0 .18rem rgba(122,18,53,.18);
+}
+
+.track-form button{
+    width: 46px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 10px;
+    background: var(--maroon);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .15s ease;
+}
+
+.track-form button:hover{
+    background: var(--maroon-deep);
+}
+
+/* ---------- Result panel ---------- */
+.track-result{
+    margin-top: 1.5rem;
+}
+
+.result-card{
+    background: var(--to-ivory);
+    border: 2px dashed var(--to-gold);
+    border-radius: 14px;
+    padding: 1.4rem 1.6rem;
+    animation: fadeIn .25s ease;
+}
+
+@keyframes fadeIn{
+    from{ opacity: 0; transform: translateY(6px); }
+    to{ opacity: 1; transform: translateY(0); }
+}
+
+.result-row{
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .4rem 0;
+    border-bottom: 1px dashed var(--to-thread);
+    font-size: .9rem;
+    color: var(--to-charcoal);
+}
+
+.result-row:last-of-type{
+    border-bottom: none;
+}
+
+.result-row span:first-child{
+    color: #8a7f70;
+    flex-shrink: 0;
+}
+
+.result-row span:last-child{
+    text-align: right;
+    font-weight: 500;
+}
+
+.status-badge{
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    padding: .3rem .8rem;
+    border-radius: 999px;
+    color: #ffffff !important;
+    text-shadow: 0 1px 1px rgba(0,0,0,.15);
+}
+
+.status-badge.pending    { background: var(--status-pending); }
+.status-badge.confirmed  { background: var(--status-confirmed); }
+.status-badge.dispatched,
+.status-badge.shipped    { background: var(--status-dispatch); }
+.status-badge.delivered  { background: var(--status-delivered); }
+.status-badge.cancelled,
+.status-badge.rejected   { background: var(--status-cancelled); }
+.status-badge.other      { background: #4A4640; }
+
+.result-empty,
+.result-error{
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .85rem;
+    color: var(--to-ivory);
+    padding: 1rem;
+}
+
+.result-loading{
+    text-align: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .85rem;
+    color: var(--to-gold);
+    padding: 1rem;
+}
+
+@media (max-width: 480px){
+    .track-card-header{ padding: 1.6rem 1.2rem 1.3rem; }
+    .track-card-body{ padding: 1.5rem 1.2rem 1.8rem; }
+}

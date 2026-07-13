@@ -1,0 +1,305 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../CSS/categories.css">
+    <link rel="stylesheet" type="text/css" href="../CSS/shop-redesign.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Shop | Jindal Razaie Udyog</title>
+</head>
+<body class="shop-page">
+    <!-- ===========================PAGE BANNER=========================== -->
+<section class="shop-hero" style="display: none;">
+    <div class="hero-inner">
+        <div class="eyebrow">Foam &middot; Fibre &middot; Cotton &middot; Bedding</div>
+        <h1>The Shop Floor</h1>
+        <p>Every razai, pillow and roll of fibre fill we make &mdash; stocked, priced and ready to ship.</p>
+    </div>
+    <div class="spool-rail" aria-hidden="true">
+        <div class="spool-track">
+            <marquee><span>Cotton</span><span>&middot;</span><span>Fibre Fill</span><span>&middot;</span>
+            <span>Foam</span><span>&middot;</span><span>Razai</span><span>&middot;</span>
+            <span>Cushion</span><span>&middot;</span><span>Bed Sheet</span><span>&middot;</span>
+            <span>Cotton</span><span>&middot;</span><span>Fibre Fill</span><span>&middot;</span>
+            <span>Foam</span><span>&middot;</span><span>Razai</span><span>&middot;</span>
+            <span>Cushion &middot;Bed Sheet</marquee>
+        </div>
+    </div>
+</section>
+<div class="navbar w-100" >
+    <div class="container-fluid">
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container-fluid">
+
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+            <div class="logo-box">
+                <h4 class="mb-0">JINDAL</h4>
+                <small>RAZAIE UDYOG</small>
+            </div>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar" style="display: none;">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Content -->
+        <div class="collapse navbar-collapse" id="mainNavbar">
+
+            <!-- Menu -->
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link " href="../HTML/index.html">Home</a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link "
+                       href="../HTML/categories.php"
+                       role="button">
+                       <!-- data-bs-toggle="dropdown"> -->
+                        Categories
+                    </a>
+
+                    <ul class="dropdown-menu">
+
+                        <li><a class="dropdown-item" href="#">Foam Mattresses</a></li>
+                        <li><a class="dropdown-item" href="#">Pillows</a></li>
+                        <li><a class="dropdown-item" href="#">Recron Fibre Fill</a></li>
+                        <li><a class="dropdown-item" href="#">Fibre Sheets</a></li>
+                        <li><a class="dropdown-item" href="#">New Cotton</a></li>
+                        <li><a class="dropdown-item" href="#">Bed Sheets</a></li>
+                        <li><a class="dropdown-item" href="#">Cushions</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="shop.html">Shop</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../HTML/bulk_order.html">Bulk Orders</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">About Us</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact Us</a>
+                </li>
+
+            </ul>
+
+            <!-- Right Side -->
+            <div class="navbar-icons">
+
+                <!-- Search -->
+                <form class="d-flex me-4">
+                    <input class="form-control search-box"
+                           type="search"
+                           placeholder="Search Products">
+                </form>
+
+                <!-- Account -->
+                <!-- <a href="<?= isset($_SESSION['customer_id']) ? '../customer/dashboard.php' : '../customer/login.php' ?>" class="nav-icon" title="<?= isset($_SESSION['customer_id']) ? htmlspecialchars($_SESSION['customer_name']) : 'My Account' ?>">
+                    <i class="fas fa-user"></i>
+                </a> -->
+
+                <!-- Wishlist -->
+                <a href="#" class="nav-icon">
+                    <i class="fas fa-heart"></i>
+                </a>
+
+                <!-- Cart -->
+                <a href="#" class="nav-icon cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+</div>
+</div>
+<!-- ===========================SHOP SECTION=========================== -->
+<section class="shop-section">
+
+    <!-- Sticky filter bar -->
+    <div class="filter-bar">
+        <div class="filter-bar-inner">
+
+            <div class="pill-group" id="categoryPills">
+                <input type="radio" name="category" id="cat-all" value="all" checked onchange="applyFilters()">
+                <label for="cat-all">All Products</label>
+
+                <input type="radio" name="category" id="cat-<?= $i ?>" value="<?= htmlspecialchars($slug) ?>" onchange="applyFilters()">
+                <label for="cat-<?= $i ?>"><?= htmlspecialchars($c['name']) ?></label>
+            </div>
+
+            <div class="filter-aux">
+                <div class="price-block">
+                    <span>Up to</span>
+                    <input type="range" class="form-range" id="priceFilter" min="100" max="50000" value="50000" onchange="applyFilters()">
+                    <span class="shop-mono">₹<span id="priceValue">50,000</span></span>
+                </div>
+
+                <div class="pill-group">
+                    <input type="radio" name="stock" id="stock-all" value="all" checked onchange="applyFilters()">
+                    <label for="stock-all">All Stock</label>
+                    <input type="radio" name="stock" id="stock-in" value="in" onchange="applyFilters()">
+                    <label for="stock-in">In Stock</label>
+                    <input type="radio" name="stock" id="stock-out" value="out" onchange="applyFilters()">
+                    <label for="stock-out">Out of Stock</label>
+                </div>
+
+                <select id="sortProducts" onchange="applyFilters()">
+                    <option value="latest">Sort: Latest</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </div>
+        </div>
+        <div class="results-count" style="max-width:1320px;margin:.6rem auto 0;">
+            Showing <span id="productCount">0</span> products
+        </div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="shop-grid-wrap">
+        <div class="row g-4" id="productContainer">
+                <p class="shop-empty">— No products on the floor right now —</p>
+            <div class="col-lg-3 col-md-4 col-sm-6 product-item"
+                data-id="<?= (int)$p['id'] ?>"
+                data-category="<?= htmlspecialchars($p['cat_slug']) ?>"
+                data-price="<?= (float)$p['price'] ?>"
+                data-stock="<?= $p['stock'] > 0 ? 'in' : 'out' ?>">
+                <div class="shop-card">
+                    <div class="shop-card-img">
+                        <img src="<?= $p['image'] ? '../Images/' . htmlspecialchars($p['image']) : '../Images/website_design.png' ?>" alt="<?= htmlspecialchars($p['name']) ?>">
+                        <span class="swatch-punch" aria-hidden="true"></span>
+                    </div>
+                    <div class="shop-card-body">
+                        <div class="shop-card-cat"><?= htmlspecialchars($p['category_name'] ?? 'Bedding') ?></div>
+                        <div class="shop-card-title"><?= htmlspecialchars($p['name']) ?></div>
+                        <div class="shop-card-price">₹<?= number_format($p['price'], 2) ?></div>
+                        <div class="shop-card-stock <?= $stockState ?>">
+                            <span class="stock-dot"></span>
+                            <?= $stockState === 'out' ? 'Sold out' : ($stockState === 'low' ? $p['stock'] . ' left — low stock' : $p['stock'] . ' units on hand') ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+<div class="modal fade"
+id="productModal"
+tabindex="-1">
+
+<div class="modal-dialog modal-lg">
+
+<div class="modal-content">
+
+<div class="modal-header">
+
+<h5 id="modalTitle"></h5>
+
+<button
+class="btn-close"
+data-bs-dismiss="modal">
+</button>
+
+</div>
+
+<div class="modal-body">
+
+<div class="row">
+
+<div class="col-md-6">
+
+<img
+id="modalImage"
+class="img-fluid rounded">
+
+</div>
+
+<div class="col-md-6">
+
+<h3 id="modalProductName"></h3>
+
+<h4
+class="text-danger"
+id="modalPrice">
+</h4>
+
+<p id="modalDescription"></p>
+
+<ul id="modalFeatures">
+</ul>
+
+<div class="d-flex align-items-center gap-2 mb-3">
+
+<button
+class="btn btn-outline-secondary"
+onclick="changeQty(-1)">
+-
+</button>
+
+<input
+type="text"
+id="qty"
+value="1"
+class="form-control text-center"
+style="width:70px">
+
+<button
+class="btn btn-outline-secondary"
+onclick="changeQty(1)">
++
+</button>
+
+</div>
+
+<button
+class="btn btn-success w-100 mb-2"
+onclick="addToCart()">
+Add To Cart
+</button>
+
+<button
+class="btn btn-maroon w-100"
+onclick="buyNow()">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../JavaScript/categories.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</body>
+</html>
